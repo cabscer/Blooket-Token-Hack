@@ -5,14 +5,14 @@ javascript:(async function() {
         return data.name; 
     }; 
     async function addCurrencies() { 
-        const tokens = Number(prompt('How many tokens do you want to add? (500 daily max)')); 
+        const tokens = Number(prompt('How many tokens do you want to add? (10000000 daily max) over 500 could get you banned.')); 
         if (isNaN(tokens) || tokens <= 0) { 
             alert('Please enter a valid number.'); 
             return; 
         }
         const myToken = localStorage.token.split('JWT ')[1]; 
         if (tokens > 10000000) { 
-            alert('Note: Blooket has a hard limit of 500 tokens daily. Amounts over this may not be added.'); 
+            alert('Note: Blooket has a hard limit of 10000000 tokens daily. Amounts over this may not be added. May be banned if over 500.'); 
         } 
         const response = await fetch('https://api.blooket.com/api/users/add-rewards', { 
             method: "PUT", 
